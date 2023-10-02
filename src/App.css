@@ -1,0 +1,102 @@
+a{
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text {
+  display: inline; 
+  margin-left: 20px;
+}
+
+.header-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example-page{
+  width: 88vw;
+  background-color: #ADD8E6;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+
+.white-div{
+  background-color: ivory;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.feature{
+  display: flex;
+}
+
+.feature-i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.free-2-use-div{
+  display: flex;
+  align-items: center;
+}
+
+.free-2-use-text{
+  margin-bottom: -20px;
+}
+
+.animations{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.playground{
+  background-color: #909090 !important;
+}
+
+.playground-form{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.playground-title{
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.playground-button{
+  display: flex;
+  justify-content: center;
+}
+
+
