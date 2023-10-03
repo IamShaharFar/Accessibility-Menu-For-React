@@ -74,20 +74,19 @@ var options = { labels: labels };
           <h1 className="header-text">Adaptive Accessibility Menu</h1>
         </div>
         <h3 className="header-bottom">
-          add accessibility toolbar to every website with one line of code
+          Enhance website accessibility instantly with one-line integration
         </h3>
       </div>
       <div className="white-div features">
-        <h5>FEATURES</h5>
+        <h5>Key Features</h5>
         <div className="feature">
           <div className="feature-i">
             <i className="fa-solid fa-magnifying-glass-plus fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
-            <h6>manipulate text size</h6>
+            <h6>Text Resize</h6>
             <span>
-              Increase Or Decrease Text Size. Works With Em / Rem / Px Or Any
-              Type Of Font-Size Units
+              Easily adjust text size with support for various font-size units.
             </span>
           </div>
         </div>
@@ -97,10 +96,9 @@ var options = { labels: labels };
             <i className="fa-solid fa-palette fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
-            <h6>invert colors</h6>
+            <h6>Color Inversion</h6>
             <span>
-              Toggles The Document's Body Background Color From Black To White
-              And The Default Text Color From White To Black And Vice Versa
+              Toggle background and text colors for improved visibility.
             </span>
           </div>
         </div>
@@ -110,8 +108,11 @@ var options = { labels: labels };
             <i class="fa-solid fa-circle-half-stroke fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
-            <h6>gray hues</h6>
-            <span>Turns The Site To Gray Hues Only - Images Included</span>
+            <h6>Gray Hues</h6>
+            <span>
+              Simplify the site's color palette to grayscale for reduced
+              distraction.
+            </span>
           </div>
         </div>
         <hr />
@@ -120,8 +121,8 @@ var options = { labels: labels };
             <i className="fa-solid fa-underline fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
-            <h6>underline links</h6>
-            <span>Mark Links With Underline</span>
+            <h6>Link Underlining</h6>
+            <span>Enhance link visibility with underlined text.</span>
           </div>
         </div>
         <hr />
@@ -130,9 +131,9 @@ var options = { labels: labels };
             <i className="fa-solid fa-grip-lines fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
-            <h6>reading guide</h6>
+            <h6>Reading Guide</h6>
             <span>
-              Add A Horizontal Line That Binds To The Mouse Or Touch Position
+              Implement a horizontal guide line for better reading focus.
             </span>
           </div>
         </div>
@@ -142,20 +143,24 @@ var options = { labels: labels };
             <i className="fa-solid fa-arrow-pointer fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
-            <h6>big cursor</h6>
-            <span>Replacing The Default Mouse Cursor With A Bigger One</span>
+            <h6>Big Cursor</h6>
+            <span>Opt for a larger mouse cursor for improved navigation.</span>
           </div>
         </div>
       </div>
+
       <div className="white-div how-to-use">
         <h6>EASY TO USE!</h6>
         <SyntaxHighlighter language="javascript" style={vs}>
           {howToUse}
         </SyntaxHighlighter>
       </div>
-      <div className="white-div limitatios">
+      <div className="white-div limitations">
         <h6>LIMITATIONS AND KNOWN ISSUES</h6>
-        <span>Works with html5 browsers only (no IE8 and below)</span>
+        <span>
+          Compatible with modern HTML5 browsers only (not supported in IE8 and
+          earlier).
+        </span>
       </div>
       <div className="white-div multi-language">
         <h6>MULTI LANGUAGE EXAMPLE</h6>
@@ -170,7 +175,7 @@ var options = { labels: labels };
         </SyntaxHighlighter>
       </div>
       <div className="white-div open-source">
-        <h6>FREE TO USE</h6>
+        <h5>Open Source</h5>
         <div className="free-2-use-div">
           <a href="https://github.com/IamShaharFar/Accessibility-Menu-For-React">
             <i className="fa-brands fa-github fa-2xl mr-3 text-success"></i>
@@ -183,20 +188,20 @@ var options = { labels: labels };
             </a>
             <br />
             <span>
-              Fell Free To Star <i className="fa-solid fa-star"></i> This
-              Repository If It Helped You.
+              Please consider giving this repository a star{" "}
+              <i className="fa-solid fa-star"></i> if you've found it helpful.
             </span>
             <br />
             <span>
-              Shout-out for
+              Special thanks to the
               <a
                 href="https://github.com/ranbuch/accessibility"
                 className="text-success"
               >
                 {" "}
-                This project{" "}
+                original project{" "}
               </a>
-              which my project is based on.
+              on which this project is based.
             </span>
           </div>
         </div>
@@ -204,16 +209,18 @@ var options = { labels: labels };
       <div className="white-div positioning">
         <h6>POSITIONING</h6>
         <span>
-          You can position the accessibility icon in any place on the screen.
-          The default position is middle left:
+          You have the flexibility to position the accessibility icon anywhere
+          on the screen. By default, it appears in the bottom left of the
+          screen:
         </span>
+
         <SyntaxHighlighter language="javascript" style={vs}>
           {positioning}
         </SyntaxHighlighter>
       </div>
       <div className="white-div styling">
         <h6>STYLING</h6>
-        <span>you can customize the menu and the button as you want</span>
+        <span>You have the freedom to customize both the menu and the button to suit your preferences.</span>
         <SyntaxHighlighter language="javascript" style={vs}>
           {styling}
         </SyntaxHighlighter>

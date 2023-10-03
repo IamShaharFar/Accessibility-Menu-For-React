@@ -107,7 +107,7 @@ function PlayGround({ options, onUpdateOptions }) {
   `;
 
   return (
-    <div className="example-page">
+    <div className="playground">
       <hr/>
       <h1 className="playground-title">Accessibility Button Playground</h1>
 
@@ -281,7 +281,7 @@ function PlayGround({ options, onUpdateOptions }) {
           Save Changes
         </button>
       </div>
-      <SyntaxHighlighter language="javascript" style={nord}>
+      <SyntaxHighlighter className="playground-code" language="javascript" style={nord}>
         {exampleCode}
       </SyntaxHighlighter>
     </div>

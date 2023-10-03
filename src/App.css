@@ -1,4 +1,4 @@
-a{
+a {
   text-decoration: none;
 }
 
@@ -6,31 +6,38 @@ ul {
   list-style: none;
 }
 
-.header-top{
+.header-top {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .header-text {
-  display: inline; 
+  display: inline;
   margin-left: 20px;
 }
 
-.header-bottom{
+.header-bottom {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.App{
+.App {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.example-page{
+.example-page {
+  width: 88vw;
+  background-color: #ADD8E6;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.playground{
   width: 88vw;
   background-color: #ADD8E6;
   padding-left: 50px;
@@ -38,7 +45,7 @@ ul {
 }
 
 
-.white-div{
+.white-div {
   background-color: ivory;
   padding: 15px;
   margin-bottom: 15px;
@@ -47,56 +54,100 @@ ul {
   border-radius: 10px;
 }
 
-.feature{
+.feature {
   display: flex;
 }
 
-.feature-i{
+.feature-i {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.free-2-use-div{
+.free-2-use-div {
   display: flex;
   align-items: center;
 }
 
-.free-2-use-text{
+.free-2-use-text {
   margin-bottom: -20px;
 }
 
-.animations{
+.animations {
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
 }
 
-.playground{
-  background-color: #909090 !important;
-}
-
-.playground-form{
+.playground-form {
   display: flex;
   justify-content: space-between;
 }
 
-.form-title{
+.form-select{
+  margin-left: 20px;
+}
+
+.form-title {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.playground-title{
+.playground-title {
   text-align: center;
   font-family: 'Caveat', cursive;
   font-weight: 700;
   font-size: 3rem;
 }
 
-.playground-button{
+.playground-button {
   display: flex;
   justify-content: center;
 }
 
+@media screen and (max-width: 767px) {
+  body {
+    background-color: #ADD8E6;
+  }
 
+  .example-page {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.header-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+  .white-div {
+    width: 100%;
+  }
+
+  .playground {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .playground-form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .playground-button{
+    margin-top: 20px;
+  }
+
+  .playground-code{
+    width: 85vw;
+  }
+}

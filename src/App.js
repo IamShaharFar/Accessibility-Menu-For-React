@@ -5,6 +5,7 @@ import { AccessibilityProvider } from "./accessibility/AccessibilityProvider";
 import AccessibilityButton from "./accessibility/AccessibilityButton";
 import AccessibilityExample from "./components/AccessibilityExample ";
 import PlayGround from "./components/PlayGround";
+import Footer from "./components/Footer";
 
 function App() {
   var labels = {
@@ -61,6 +62,7 @@ function App() {
         )}
         <AccessibilityExample />
         <PlayGround options={options} onUpdateOptions={handleOptionsChange}/>
+        <Footer />
       </div>
     </AccessibilityProvider>
   );
