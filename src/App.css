@@ -37,7 +37,7 @@ ul {
   padding-right: 50px;
 }
 
-.playground{
+.playground {
   width: 88vw;
   background-color: #ADD8E6;
   padding-left: 50px;
@@ -84,7 +84,7 @@ ul {
   justify-content: space-between;
 }
 
-.form-select{
+.form-select {
   margin-left: 20px;
 }
 
@@ -99,6 +99,10 @@ ul {
   font-family: 'Caveat', cursive;
   font-weight: 700;
   font-size: 3rem;
+}
+
+.playground-code {
+  height: 400px;
 }
 
 .playground-button {
@@ -119,12 +123,12 @@ ul {
     align-items: center;
   }
 
-.header-bottom{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+  .header-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
   .white-div {
     width: 100%;
@@ -138,16 +142,16 @@ ul {
     align-items: center;
   }
 
-  .playground-form{
+  .playground-form {
     display: flex;
     flex-direction: column;
   }
 
-  .playground-button{
+  .playground-button {
     margin-top: 20px;
   }
 
-  .playground-code{
+  .playground-code {
     width: 85vw;
   }
 }
