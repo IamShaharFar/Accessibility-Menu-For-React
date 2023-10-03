@@ -102,6 +102,10 @@ ul {
   font-size: 3rem;
 }
 
+.playground-code{
+  height: 400px;
+}
+
 .playground-button {
   display: flex;
   justify-content: center;
