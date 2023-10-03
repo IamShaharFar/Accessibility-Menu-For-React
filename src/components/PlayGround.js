@@ -1,15 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
-import CopyToClipboard from "react-copy-to-clipboard";
+import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import "./PlayGround.css";
 
 function PlayGround({ options, onUpdateOptions }) {
   const [localOptions, setLocalOptions] = useState(options);
-
-  function handleCopy() {
-    alert("The code has been copied to the clipboard.");
-  }
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -36,7 +31,7 @@ function PlayGround({ options, onUpdateOptions }) {
       updatedOptions.modules[moduleKey] = checked;
       return updatedOptions;
     });
-    console.log(moduleKey + " - " + checked);
+    console.log(moduleKey + " - " + checked )
   };
 
   const handleStyleInputChange = (e) => {
@@ -105,7 +100,6 @@ function PlayGround({ options, onUpdateOptions }) {
   };  `;
 
   const exampleCode = `
-  //Simply copy and paste the following code to configure your component's props effortlessly
   ${labelsCode}
   ${optionsCode}
   ${modulesCode}
@@ -114,7 +108,7 @@ function PlayGround({ options, onUpdateOptions }) {
 
   return (
     <div className="playground">
-      <hr />
+      <hr/>
       <h1 className="playground-title">Accessibility Button Playground</h1>
 
       <div className="playground-form">
@@ -287,14 +281,7 @@ function PlayGround({ options, onUpdateOptions }) {
           Save Changes
         </button>
       </div>
-      <CopyToClipboard text={exampleCode}>
-        <button className="btn btn-secondary copy-button" onClick={handleCopy}><i className="fa-solid fa-copy"></i> Copy Code</button>
-      </CopyToClipboard>
-      <SyntaxHighlighter
-        className="playground-code"
-        language="javascript"
-        style={nord}
-      >
+      <SyntaxHighlighter className="playground-code" language="javascript" style={nord}>
         {exampleCode}
       </SyntaxHighlighter>
     </div>

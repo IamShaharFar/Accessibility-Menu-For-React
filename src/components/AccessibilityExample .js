@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Light, Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark, lightfair } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { vs } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./Animations.css";
 
 const AccessibilityExample = () => {
   const howToUse = `
-  npm install accessibility
-
   import { AccessibilityProvider } from "./accessibility/AccessibilityProvider";
   import AccessibilityButton from "./accessibility/AccessibilityButton";
 
