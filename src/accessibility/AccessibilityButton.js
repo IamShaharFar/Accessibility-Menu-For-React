@@ -1,11 +1,55 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AccessibilityContext } from "./AccessibilityProvider";
 import "./Accesability.css";
 
-function AccessibilityButton({ options }) {
+function AccessibilityButton({ Options }) {
+  const initOptions = {
+    labels: {
+      resetTitle: "Reset",
+      closeTitle: "Close",
+      menuTitle: "Accessibility Menu",
+      increaseText: "Increase Text Size",
+      decreaseText: "Decrease Text Size",
+      invertColors: "Invert Colors",
+      grayHues: "Gray Hues",
+      underlineLinks: "Underline Links",
+      bigCursor: "Big Cursor",
+      readingGuide: "Reading Guide",
+      disableAnimations: "Disable Animations",
+    },
+    modules: {
+      increaseText: true,
+      decreaseText: true,
+      invertColors: true,
+      grayHues: true,
+      underlineLinks: true,
+      bigCursor: true,
+      readingGuide: true,
+      disableAnimations: true,
+    },
+    style: {
+      mode: "light",
+      icon: "access",
+      shape: "circle",
+      position: {
+        bottom: { size: 50 },
+        left: { size: 20 },
+        toRight: true,
+      },
+    },
+  };
+  const [options, setOptions] = useState(Options);
   const accessibilityInstance = useContext(AccessibilityContext);
 
   const [menuVisible, setMenuVisible] = useState(false);
+
+  useEffect(() => {
+    Object.keys(initOptions).forEach((key) => {
+      if (options[key] === null) {
+        setOptions({ ...options, [key]: initOptions[key] });
+      }
+    });
+  }, [options]);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -67,12 +111,12 @@ function AccessibilityButton({ options }) {
     window.location.reload();
   }
 
+  const styleBottom = options?.style?.position?.bottom?.size == null 
+  ? 50
+  : options?.style?.position?.bottom?.size
+
   const divStyle = {
-    bottom: `${
-      options.style.position.bottom.size == null
-        ? 50
-        : options.style.position.bottom.size
-    }px`,
+    bottom: `${styleBottom}px`,
     ...(options.style.position.toRight
       ? {
           right: `${
