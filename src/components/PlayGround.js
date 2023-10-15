@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { nord } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./PlayGround.css";
 
 function PlayGround({ options, onUpdateOptions }) {
@@ -31,7 +31,7 @@ function PlayGround({ options, onUpdateOptions }) {
       updatedOptions.modules[moduleKey] = checked;
       return updatedOptions;
     });
-    console.log(moduleKey + " - " + checked )
+    console.log(moduleKey + " - " + checked);
   };
 
   const handleStyleInputChange = (e) => {
@@ -57,6 +57,10 @@ function PlayGround({ options, onUpdateOptions }) {
     onUpdateOptions(localOptions);
   };
 
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+  };
+
   const labelsCode = `
   var labels = {
     resetTitle: "${localOptions.labels.resetTitle}",
@@ -70,13 +74,14 @@ function PlayGround({ options, onUpdateOptions }) {
     bigCursor: "${localOptions.labels.bigCursor}",
     readingGuide: "${localOptions.labels.readingGuide}",
     disableAnimations: "${localOptions.labels.disableAnimations}",
+    readableFont: "${localOptions.labels.readableFont}"
   };`;
 
   const optionsCode = `
-  var options = { labels: labels };`;
+  var Options = { labels: labels };`;
 
   const modulesCode = `
-  options.modules = {
+  Options.modules = {
     increaseText: ${localOptions.modules.increaseText},
     decreaseText: ${localOptions.modules.decreaseText},
     invertColors: ${localOptions.modules.invertColors},
@@ -88,7 +93,7 @@ function PlayGround({ options, onUpdateOptions }) {
   };`;
 
   const styleCode = `
-  options.style = {
+  Options.style = {
     mode: "${localOptions.style.mode}",
     icon: "${localOptions.style.icon}",
     shape: "${localOptions.style.shape}",
@@ -99,8 +104,7 @@ function PlayGround({ options, onUpdateOptions }) {
     },
   };  `;
 
-  const exampleCode = `
-  ${labelsCode}
+  const exampleCode = `${labelsCode}
   ${optionsCode}
   ${modulesCode}
   ${styleCode}
@@ -108,7 +112,7 @@ function PlayGround({ options, onUpdateOptions }) {
 
   return (
     <div className="playground">
-      <hr/>
+      <hr />
       <h1 className="playground-title">Accessibility Button Playground</h1>
 
       <div className="playground-form">
@@ -281,9 +285,22 @@ function PlayGround({ options, onUpdateOptions }) {
           Save Changes
         </button>
       </div>
-      <SyntaxHighlighter className="playground-code" language="javascript" style={nord}>
-        {exampleCode}
-      </SyntaxHighlighter>
+      <div className="code-container" style={{ position: 'relative' }}>
+        <button
+          className="btn btn-secondary copy-button-pg"
+          onClick={() => copyToClipboard(exampleCode)}
+          title="Copy to Clipboard"
+        >
+          <i className="fas fa-copy"></i>
+        </button>
+        <SyntaxHighlighter
+          className="playground-code"
+          language="javascript"
+          style={nord}
+        >
+          {exampleCode}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 }

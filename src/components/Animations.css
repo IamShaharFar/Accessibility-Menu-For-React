@@ -1,4 +1,4 @@
-/* MovingIcon.css */
+
 .icon-container {
     width: 100px;
     height: 100px;
@@ -8,16 +8,11 @@
 
 .moving-icon {
     width: 50px;
-    /* Adjust the size of the icon as needed */
     height: 50px;
-    /* Adjust the size of the icon as needed */
     background-color: #3498db;
-    /* Choose the icon's background color */
     border-radius: 50%;
-    /* Makes the icon round */
     position: absolute;
     animation: moveRight 4s linear infinite;
-    /* Adjust animation duration and timing function as needed */
 }
 
 @keyframes moveRight {
@@ -27,16 +22,12 @@
 
     100% {
         left: 100%;
-        /* Change the final position based on the container width */
     }
 }
 
-/* BounceCircle.css */
 .bounce-circle-container {
     width: 100px;
-    /* Adjust the width of the container as needed */
     height: 100px;
-    /* Adjust the height of the container as needed */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,15 +36,10 @@
 
 .bounce-circle {
     width: 50px;
-    /* Adjust the size of the circle as needed */
     height: 50px;
-    /* Adjust the size of the circle as needed */
     background-color: #3498db;
-    /* Choose the circle's background color */
     border-radius: 50%;
-    /* Makes the circle round */
     animation: bounce 2s ease-in-out infinite;
-    /* Adjust animation duration and timing function as needed */
     transform-style: preserve-3d;
 }
 
@@ -66,16 +52,12 @@
 
     50% {
         transform: translateY(-50px);
-        /* Adjust the bounce height as needed */
     }
 }
 
-/* RotateSquare.css */
 .rotate-square-container {
     width: 100px;
-    /* Adjust the width of the container as needed */
     height: 100px;
-    /* Adjust the height of the container as needed */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,14 +66,16 @@
 
 .rotate-square {
     width: 50px;
-    /* Adjust the size of the square as needed */
     height: 50px;
-    /* Adjust the size of the square as needed */
     background-color: #3498db;
-    /* Choose the square's background color */
     animation: rotate 3s linear infinite;
-    /* Adjust animation duration and timing function as needed */
     transform-style: preserve-3d;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 @keyframes rotate {

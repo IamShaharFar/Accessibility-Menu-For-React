@@ -1,20 +1,31 @@
 import React, { useState } from "react";
-import { Light, Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark, lightfair } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vs } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./Animations.css";
+import { useEffect } from "react";
 
 const AccessibilityExample = () => {
-  const howToUse = `
-  import { AccessibilityProvider } from "./accessibility/AccessibilityProvider";
-  import AccessibilityButton from "./accessibility/AccessibilityButton";
 
+useEffect(() => {
+  const keys = Object.keys(localStorage);
+
+  for (const key of keys) {
+    const value = localStorage.getItem(key);
+    console.log(`${key}: ${value}`);
+  }
+},[])
+
+  const howToUse = `
+  npm i accessibility-react
+
+  import { AccessibilityProvider, AccessibilityButton } from "accessibility-react"
+
+  <div className="App">
+    {your components}
     <AccessibilityProvider>
-      <div className="App">
-        <AccessibilityButton />
-        {your components}
-      </div>
+      <AccessibilityButton />
     </AccessibilityProvider>
+  </div>
   `;
 
   const multiLanguage = `
@@ -29,14 +40,15 @@ const AccessibilityExample = () => {
     underlineLinks: 'underline links (in my language)',
     bigCursor: 'big cursor (in my language)',
     readingGuide: 'reading guide (in my language)',
-    disableAnimations: 'disable animations (in my language)'
+    disableAnimations: 'disable animations (in my language)',
+    readableFont: 'readable font (in my language)'
 };
-var options = { labels: labels };
-<AccessibilityButton options={options}/>
+var Options = { labels: labels };
+<AccessibilityButton Options={options}/>
   `;
 
   const disableFeatures = `
-  options.modules = {
+  Options.modules = {
     increaseText: true/false,
     decreaseText: true/false,
     invertColors: true/false,
@@ -44,12 +56,13 @@ var options = { labels: labels };
     underlineLinks: true/false,
     bigCursor: true/false,
     readingGuide: true/false,
-    disableAnimations: true/false
+    disableAnimations: true/false,
+    readableFont: true/false
 };
   `;
 
   const positioning = `
-  options.style = {
+  Options.style = {
     position: {
       bottom: { size: 50 },
       left: { size: 0 },
@@ -59,13 +72,16 @@ var options = { labels: labels };
   `;
 
   const styling = `
-  options.style = {
-    mode: "", //dark
-    icon: "", //wheelchair
-    shape: "", //rectangle
+  Options.style = {
+    mode: "", // dark / light
+    icon: "", // wheelchair / access
+    shape: "", // rectangle / circle
   };
   `;
 
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+  }
   return (
     <div className="example-page">
       <div className="header">
@@ -151,9 +167,18 @@ var options = { labels: labels };
 
       <div className="white-div how-to-use">
         <h6>EASY TO USE!</h6>
-        <SyntaxHighlighter language="javascript" style={vs}>
-          {howToUse}
-        </SyntaxHighlighter>
+        <div className="code-container" style={{ position: "relative" }}>
+          <button
+            className="btn btn-light copy-button"
+            onClick={() => copyToClipboard(howToUse)}
+            title="Copy to Clipboard"
+          >
+            <i className="fas fa-copy"></i>
+          </button>
+          <SyntaxHighlighter language="javascript" style={vs}>
+            {howToUse}
+          </SyntaxHighlighter>
+        </div>
       </div>
       <div className="white-div limitations">
         <h6>LIMITATIONS AND KNOWN ISSUES</h6>
@@ -164,15 +189,33 @@ var options = { labels: labels };
       </div>
       <div className="white-div multi-language">
         <h6>MULTI LANGUAGE EXAMPLE</h6>
-        <SyntaxHighlighter language="javascript" style={vs}>
-          {multiLanguage}
-        </SyntaxHighlighter>
+        <div className="code-container" style={{ position: "relative" }}>
+          <button
+            className="btn btn-light copy-button"
+            onClick={() => copyToClipboard(multiLanguage)}
+            title="Copy to Clipboard"
+          >
+            <i className="fas fa-copy"></i>
+          </button>
+          <SyntaxHighlighter language="javascript" style={vs}>
+            {multiLanguage}
+          </SyntaxHighlighter>
+        </div>
       </div>
       <div className="white-div disable-features">
         <h6>DISABLE FEATURES EXAMPLE</h6>
-        <SyntaxHighlighter language="javascript" style={vs}>
-          {disableFeatures}
-        </SyntaxHighlighter>
+        <div className="code-container" style={{ position: "relative" }}>
+          <button
+            className="btn btn-light copy-button"
+            onClick={() => copyToClipboard(disableFeatures)}
+            title="Copy to Clipboard"
+          >
+            <i className="fas fa-copy"></i>
+          </button>
+          <SyntaxHighlighter language="javascript" style={vs}>
+            {disableFeatures}
+          </SyntaxHighlighter>
+        </div>
       </div>
       <div className="white-div open-source">
         <h5>Open Source</h5>
@@ -213,17 +256,37 @@ var options = { labels: labels };
           on the screen. By default, it appears in the bottom left of the
           screen:
         </span>
-
-        <SyntaxHighlighter language="javascript" style={vs}>
-          {positioning}
-        </SyntaxHighlighter>
+        <div className="code-container" style={{ position: "relative" }}>
+          <button
+            className="btn btn-light copy-button"
+            onClick={() => copyToClipboard(positioning)}
+            title="Copy to Clipboard"
+          >
+            <i className="fas fa-copy"></i>
+          </button>
+          <SyntaxHighlighter language="javascript" style={vs}>
+            {positioning}
+          </SyntaxHighlighter>
+        </div>
       </div>
       <div className="white-div styling">
         <h6>STYLING</h6>
-        <span>You have the freedom to customize both the menu and the button to suit your preferences.</span>
-        <SyntaxHighlighter language="javascript" style={vs}>
-          {styling}
-        </SyntaxHighlighter>
+        <span>
+          You have the freedom to customize both the menu and the button to suit
+          your preferences.
+        </span>
+        <div className="code-container" style={{ position: "relative" }}>
+          <button
+            className="btn btn-light copy-button"
+            onClick={() => copyToClipboard(styling)}
+            title="Copy to Clipboard"
+          >
+            <i className="fas fa-copy"></i>
+          </button>
+          <SyntaxHighlighter language="javascript" style={vs}>
+            {styling}
+          </SyntaxHighlighter>
+        </div>
       </div>
       <div className="white-div pause-animation">
         <h6>PAUSE ANIMATIONS</h6>

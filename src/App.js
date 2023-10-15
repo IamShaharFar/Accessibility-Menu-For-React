@@ -1,8 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { AccessibilityProvider } from "./accessibility/AccessibilityProvider";
-import AccessibilityButton from "./accessibility/AccessibilityButton";
+import {
+  AccessibilityProvider,
+  AccessibilityButton,
+} from "accessibility-react";
 import AccessibilityExample from "./components/AccessibilityExample ";
 import PlayGround from "./components/PlayGround";
 import Footer from "./components/Footer";
@@ -21,6 +23,7 @@ function App() {
       bigCursor: "Big Cursor",
       readingGuide: "Reading Guide",
       disableAnimations: "Disable Animations",
+      readableFont: 'Readable Font'
     },
     modules: {
       increaseText: true,
@@ -31,11 +34,12 @@ function App() {
       bigCursor: true,
       readingGuide: true,
       disableAnimations: true,
+      readableFont: true
     },
     style: {
-      mode: "light", 
-      icon: "access", 
-      shape: "circle", 
+      mode: "light",
+      icon: "access",
+      shape: "circle",
       position: {
         bottom: { size: 50 },
         left: { size: 20 },
@@ -50,20 +54,35 @@ function App() {
     setOptions(newOptions);
   };
 
+  const handleFont = () => {
+    const newFontFamily = "Arial";
+
+    const textElements = Array.from(document.querySelectorAll("*")).filter(
+      (element) => {
+        return element.tagName.toLowerCase() !== "i";
+      }
+    );
+    textElements.forEach((element) => {
+      element.style.fontFamily = newFontFamily;
+    });
+  };
+
+  const resetFont = () => {
+    const textElements = document.querySelectorAll("*");
+    textElements.forEach((element) => {
+      element.style.fontFamily = "";
+    });
+  };
+
   return (
-    <AccessibilityProvider>
-      <div className="App">
-        {options == null ? (
-          <p>Loading...</p>
-        ) : (
-          <AccessibilityButton Options={options} />
-          // <></>
-        )}
-        <AccessibilityExample />
-        <PlayGround options={options} onUpdateOptions={handleOptionsChange}/>
-        <Footer />
-      </div>
-    </AccessibilityProvider>
+    <div className="App">
+      <AccessibilityExample />
+      <PlayGround options={options} onUpdateOptions={handleOptionsChange} />
+      <Footer />
+      <AccessibilityProvider>
+        <AccessibilityButton Options={options} />
+      </AccessibilityProvider>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "accessibility-menu-for-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React accessibility menu",
   "private": false,
   "main": "./src/index.js",
@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "accessibility": "^4.5.7",
+    "accessibility-react": "^1.2.0",
     "bootstrap": "^5.3.2",
     "path": "^0.12.7",
     "react": "^18.2.0",
@@ -16,8 +16,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "web-vitals": "^2.1.4",
-    "webpack": "^5.88.2"
+    "web-vitals": "^3.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,9 +29,6 @@
       "react-app",
       "react-app/jest"
     ]
-  },
-  "devDependencies": {
-    "webpack-cli": "^5.1.4"
   },
   "browserslist": {
     "production": [
