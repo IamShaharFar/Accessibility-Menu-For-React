@@ -2,8 +2,6 @@
 
 A React library that helps developers build accessible web applications. It provides a set of utilities designed to help you build React applications that meet accessibility standards.
 
-![npm](https://img.shields.io/npm/v/accessibility-react)
-
 ## Table of Contents
 
 - [Demo](#demo)
@@ -18,6 +16,7 @@ A React library that helps developers build accessible web applications. It prov
 To see a demo of the project, please visit the following link:
 
 [Demo](https://accessibility-menu-react.onrender.com/)
+[npm](https://www.npmjs.com/package/accessibility-react)
 
 This demo will show you how to use the project to make your website more accessible. You will be able to see how to use the project to add alt text to images, create transcripts for videos, and improve the overall usability of your website for people with disabilities.
 
