@@ -17,7 +17,7 @@ A React library that helps developers build accessible web applications. It prov
 
 To see a demo of the project, please visit the following link:
 
-[https://accessibility-menu-react.onrender.com/]
+[Demo](#https://accessibility-menu-react.onrender.com/)
 
 This demo will show you how to use the project to make your website more accessible. You will be able to see how to use the project to add alt text to images, create transcripts for videos, and improve the overall usability of your website for people with disabilities.
 
