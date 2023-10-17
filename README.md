@@ -1,28 +1,76 @@
-# Accessibility Menu for React
+# Accessibility-react
 
-Accessibility Menu for React is a library that provides an easy way to enhance the accessibility of your React applications. With this library, you can add a customizable accessibility menu to your application, allowing users to adjust various accessibility settings to meet their needs.
+A React library that helps developers build accessible web applications. It provides a set of utilities designed to help you build React applications that meet accessibility standards.
 
-## Features
+![npm](https://img.shields.io/npm/v/accessibility-react)
 
-* Text size adjustments
-* Color inversion
-* Gray hues
-* Underline links
-* Big cursor
-* Reading guide
-* Disable animations
+## Table of Contents
 
-## Getting Started
+- [Installation](#installation)
+- [Usage](#usage)
+- [Options](#options)
+- [Example](#example)
+- [Support](#support)
 
-To get started with Accessibility Menu for React, follow the installation and usage instructions in the [Installation](https://accessibility-menu-react.onrender.com/) and [Usage](https://accessibility-menu-react.onrender.com/) sections of the documentation.
+## Installation
 
-## Documentation
+```npm install accessibility-react```
 
-For detailed information on how to use this library, refer to the official documentation:
+or
 
-* [Accessibility Menu for React Documentation](https://accessibility-menu-react.onrender.com/)
+```yarn add accessibility-react```
 
-## License
+## Usage
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+You can include the `AccessibilityProvider` and `AccessibilityButton` in your component like this:
 
+```jsx
+import { AccessibilityProvider, AccessibilityButton } from "accessibility-react/dist/index"
+
+<div className="App">
+  {/* your components */}
+  <AccessibilityProvider>
+   <AccessibilityButton Options={initOptions}/>
+  </AccessibilityProvider>
+</div>
+```
+
+## Options
+
+'initOptions' is an object to customize the appearance and functionality of the AccessibilityButton. More information and additional options will be added in future releases.
+
+## Example
+
+Here is an example on how to use the accessibility-react library:
+
+```jsx
+// Import the necessary components
+import { AccessibilityProvider, AccessibilityButton } from "accessibility-react"
+
+// Define your options
+const initOptions = {
+   // your options here
+}
+
+function App() {
+  return (
+    <div className="App">
+       {/* your components */}
+      <AccessibilityProvider>
+       <AccessibilityButton Options={initOptions}/>
+      </AccessibilityProvider>
+    </div>
+  )
+}
+
+export default App
+```
+
+## Support
+
+If you encounter any problems or have questions, please file an issue through the GitHub issue tracker.
+
+## Contributions
+
+Contributions are welcome! If you'd like to contribute, feel free to send a pull request. Please follow current coding style.
+This project follows semantic versioning for publishing new versions.
