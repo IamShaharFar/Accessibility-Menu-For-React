@@ -18,7 +18,7 @@ useEffect(() => {
   const howToUse = `
   npm i accessibility-react
 
-  import { AccessibilityProvider, AccessibilityButton } from "accessibility-react"
+  import { AccessibilityProvider, AccessibilityButton } from "accessibility-react/dist/index"
 
   <div className="App">
     {your components}
@@ -121,7 +121,7 @@ var Options = { labels: labels };
         <hr />
         <div className="feature">
           <div className="feature-i">
-            <i class="fa-solid fa-circle-half-stroke fa-2xl options-i"></i>
+            <i className="fa-solid fa-circle-half-stroke fa-2xl options-i"></i>
           </div>
           <div className="feature-text">
             <h6>Gray Hues</h6>

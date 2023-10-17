@@ -1,13 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import {
-  AccessibilityProvider,
-  AccessibilityButton,
-} from "accessibility-react";
 import AccessibilityExample from "./components/AccessibilityExample ";
 import PlayGround from "./components/PlayGround";
 import Footer from "./components/Footer";
+import {AccessibilityProvider, AccessibilityButton} from "accessibility-react/dist/index"
 
 function App() {
   const initOptions = {
@@ -23,7 +20,7 @@ function App() {
       bigCursor: "Big Cursor",
       readingGuide: "Reading Guide",
       disableAnimations: "Disable Animations",
-      readableFont: 'Readable Font'
+      readableFont: "Readable Font",
     },
     modules: {
       increaseText: true,
@@ -34,7 +31,7 @@ function App() {
       bigCursor: true,
       readingGuide: true,
       disableAnimations: true,
-      readableFont: true
+      readableFont: true,
     },
     style: {
       mode: "light",
