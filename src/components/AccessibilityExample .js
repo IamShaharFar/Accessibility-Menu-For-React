@@ -9,47 +9,53 @@ const AccessibilityExample = () => {
   const howToUse = `
   npm i accessibility-react
 
-  import { AccessibilityProvider, AccessibilityButton } from "accessibility-react/dist/index"
+  import {Accessibility} from "accessibility-react/dist/index"
 
   <div className="App">
     {your components}
-    <AccessibilityProvider>
-      <AccessibilityButton />
-    </AccessibilityProvider>
+    <Accessibility Options={options}/>
   </div>
   `;
 
   const multiLanguage = `
-  var labels = {
-    resetTitle: 'reset (in my language)',
-    closeTitle: 'close (in my language)',
-    menuTitle: 'title (in my language)',
-    increaseText: 'increase text size (in my language)',
-    decreaseText: 'decrease text size (in my language)',
-    invertColors: 'invert colors (in my language)',
-    grayHues: 'gray hues (in my language)',
-    underlineLinks: 'underline links (in my language)',
-    bigCursor: 'big cursor (in my language)',
-    readingGuide: 'reading guide (in my language)',
-    disableAnimations: 'disable animations (in my language)',
-    readableFont: 'readable font (in my language)'
-};
+  var labels: {
+    resetTitle: "Reset",
+    closeTitle: "Close",
+    menuTitle: "Accessibility Menu",
+    increaseText: "Increase Text Size",
+    decreaseText: "Decrease Text Size",
+    increaseSpacing: "Increase Text Spacing",
+    decreaseSpacing: "Decrease Text Spacing",
+    increaseLineHeight: "Increase Line Height",
+    decreaseLineHeight: "Decrease Line Height",
+    invertColors: "Invert Colors",
+    grayHues: "Gray Hues",
+    underlineLinks: "Underline Links",
+    bigCursor: "Big Cursor",
+    readingGuide: "Reading Guide",
+    disableAnimations: "Disable Animations",
+    readableFont: "Readable Font",
+  };
 var Options = { labels: labels };
 <AccessibilityButton Options={options}/>
   `;
 
   const disableFeatures = `
-  Options.modules = {
-    increaseText: true/false,
-    decreaseText: true/false,
-    invertColors: true/false,
-    grayHues: true/false,
-    underlineLinks: true/false,
-    bigCursor: true/false,
-    readingGuide: true/false,
-    disableAnimations: true/false,
-    readableFont: true/false
-};
+  Options.modules: {
+    increaseText: true,
+    decreaseText: true,
+    increaseSpacing: true,
+    decreaseSpacing: true,
+    increaseLineHeight: true,
+    decreaseLineHeight: true,
+    invertColors: true,
+    grayHues: true,
+    underlineLinks: true,
+    bigCursor: true,
+    readingGuide: true,
+    disableAnimations: true,
+    readableFont: true,
+  };
   `;
 
   const positioning = `
