@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import AccessibilityExample from "./components/AccessibilityExample ";
 import PlayGround from "./components/PlayGround";
 import Footer from "./components/Footer";
-import {AccessibilityProvider, AccessibilityButton} from "accessibility-react/dist/index"
+import {Accessibility} from "accessibility-react/dist/index"
 
 function App() {
   const initOptions = {
@@ -76,9 +76,7 @@ function App() {
       <AccessibilityExample />
       <PlayGround options={options} onUpdateOptions={handleOptionsChange} />
       <Footer />
-      <AccessibilityProvider>
-        <AccessibilityButton Options={options} />
-      </AccessibilityProvider>
+      <Accessibility Options={options}/>
     </div>
   );
 }
