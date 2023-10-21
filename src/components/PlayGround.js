@@ -68,6 +68,10 @@ function PlayGround({ options, onUpdateOptions }) {
     menuTitle: "${localOptions.labels.menuTitle}",
     increaseText: "${localOptions.labels.increaseText}",
     decreaseText: "${localOptions.labels.decreaseText}",
+    increaseSpacing: "${localOptions.labels.increaseSpacing}",
+    decreaseSpacing: "${localOptions.labels.decreaseSpacing}",
+    increaseLineHeight: "${localOptions.labels.increaseLineHeight}",
+    decreaseLineHeight: "${localOptions.labels.decreaseLineHeight}",
     invertColors: "${localOptions.labels.invertColors}",
     grayHues: "${localOptions.labels.grayHues}",
     underlineLinks: "${localOptions.labels.underlineLinks}",
@@ -84,6 +88,10 @@ function PlayGround({ options, onUpdateOptions }) {
   Options.modules = {
     increaseText: ${localOptions.modules.increaseText},
     decreaseText: ${localOptions.modules.decreaseText},
+    increaseSpacing: "${localOptions.modules.increaseSpacing}",
+    decreaseSpacing: "${localOptions.modules.decreaseSpacing}",
+    increaseLineHeight: "${localOptions.modules.increaseLineHeight}",
+    decreaseLineHeight: "${localOptions.modules.decreaseLineHeight}",
     invertColors: ${localOptions.modules.invertColors},
     grayHues: ${localOptions.modules.grayHues},
     underlineLinks: ${localOptions.modules.underlineLinks},
@@ -119,11 +127,11 @@ function PlayGround({ options, onUpdateOptions }) {
         <div className="labels">
           <h3 className="form-title">Labels</h3>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-4">
               {Object.keys(localOptions.labels)
                 .slice(
                   0,
-                  Math.ceil(Object.keys(localOptions.labels).length / 2)
+                  Math.ceil(Object.keys(localOptions.labels).length / 3)
                 )
                 .map((labelKey) => (
                   <div className="mb-3" key={labelKey}>
@@ -133,7 +141,7 @@ function PlayGround({ options, onUpdateOptions }) {
                     <input
                       type="text"
                       id={labelKey}
-                      className="form-control"
+                      className="form-control w-75"
                       name={`labels.${labelKey}`}
                       value={localOptions.labels[labelKey]}
                       onChange={handleInputChange}
@@ -141,21 +149,42 @@ function PlayGround({ options, onUpdateOptions }) {
                   </div>
                 ))}
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               {Object.keys(localOptions.labels)
                 .slice(
-                  Math.ceil(Object.keys(localOptions.labels).length / 2),
-                  Object.keys(localOptions.labels).length
+                  Math.ceil(Object.keys(localOptions.labels).length / 3),
+                  2 * Math.ceil(Object.keys(localOptions.labels).length / 3)
                 )
                 .map((labelKey) => (
-                  <div className="mb-3" key={labelKey}>
+                  <div className="mb-3 mx-0" key={labelKey}>
                     <label htmlFor={labelKey} className="form-label">
                       {labelKey}:
                     </label>
                     <input
                       type="text"
                       id={labelKey}
-                      className="form-control"
+                      className="form-control w-75"
+                      name={`labels.${labelKey}`}
+                      value={localOptions.labels[labelKey]}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                ))}
+            </div>
+            <div className="col-md-4">
+              {Object.keys(localOptions.labels)
+                .slice(
+                  2 * Math.ceil(Object.keys(localOptions.labels).length / 3)
+                )
+                .map((labelKey) => (
+                  <div className="mb-3 mx-0" key={labelKey}>
+                    <label htmlFor={labelKey} className="form-label">
+                      {labelKey}:
+                    </label>
+                    <input
+                      type="text"
+                      id={labelKey}
+                      className="form-control w-75"
                       name={`labels.${labelKey}`}
                       value={localOptions.labels[labelKey]}
                       onChange={handleInputChange}
@@ -168,23 +197,27 @@ function PlayGround({ options, onUpdateOptions }) {
 
         <div className="modules">
           <h3 className="form-title">Modules</h3>
-          {Object.keys(localOptions.modules).map((moduleKey) => (
-            <div className="mb-3" key={moduleKey}>
-              <label htmlFor={moduleKey} className="form-label">
-                {moduleKey}:
-              </label>
-              <input
-                className="form-check-input ml-3"
-                type="checkbox"
-                id={moduleKey}
-                name={`labels.${moduleKey}`}
-                checked={localOptions.modules[moduleKey]}
-                onChange={(e) =>
-                  handleModuleInputChange(moduleKey, e.target.checked)
-                }
-              />
+          <div className="row">
+            <div className="col-md-6">
+              {Object.keys(localOptions.modules).map((moduleKey) => (
+                <div className="form-check mb-3" key={moduleKey}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id={moduleKey}
+                    name={`labels.${moduleKey}`}
+                    checked={localOptions.modules[moduleKey]}
+                    onChange={(e) =>
+                      handleModuleInputChange(moduleKey, e.target.checked)
+                    }
+                  />
+                  <label className="form-check-label mx-3" htmlFor={moduleKey}>
+                    {moduleKey}:
+                  </label>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="style">
@@ -285,7 +318,7 @@ function PlayGround({ options, onUpdateOptions }) {
           Save Changes
         </button>
       </div>
-      <div className="code-container" style={{ position: 'relative' }}>
+      <div className="code-container" style={{ position: "relative" }}>
         <button
           className="btn btn-secondary copy-button-pg"
           onClick={() => copyToClipboard(exampleCode)}

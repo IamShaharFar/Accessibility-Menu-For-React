@@ -14,6 +14,10 @@ function App() {
       menuTitle: "Accessibility Menu",
       increaseText: "Increase Text Size",
       decreaseText: "Decrease Text Size",
+      increaseSpacing: "Increase Text Spacing",
+      decreaseSpacing: "Decrease Text Spacing",
+      increaseLineHeight: "Increase Line Height",
+      decreaseLineHeight: "Decrease Line Height",
       invertColors: "Invert Colors",
       grayHues: "Gray Hues",
       underlineLinks: "Underline Links",
@@ -25,6 +29,10 @@ function App() {
     modules: {
       increaseText: true,
       decreaseText: true,
+      increaseSpacing: true,
+      decreaseSpacing: true,
+      increaseLineHeight: true,
+      decreaseLineHeight: true,
       invertColors: true,
       grayHues: true,
       underlineLinks: true,
@@ -46,6 +54,9 @@ function App() {
   };
 
   const [options, setOptions] = useState(initOptions);
+
+  useEffect(() => {
+  }, [options]);
 
   const handleOptionsChange = (newOptions) => {
     setOptions(newOptions);
@@ -76,7 +87,7 @@ function App() {
       <AccessibilityExample />
       <PlayGround options={options} onUpdateOptions={handleOptionsChange} />
       <Footer />
-      <Accessibility Options={options}/>
+      <Accessibility Options={options} key={JSON.stringify(options)}/>
     </div>
   );
 }

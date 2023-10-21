@@ -6,15 +6,6 @@ import { useEffect } from "react";
 
 const AccessibilityExample = () => {
 
-useEffect(() => {
-  const keys = Object.keys(localStorage);
-
-  for (const key of keys) {
-    const value = localStorage.getItem(key);
-    console.log(`${key}: ${value}`);
-  }
-},[])
-
   const howToUse = `
   npm i accessibility-react
 
