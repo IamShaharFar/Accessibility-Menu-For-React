@@ -241,7 +241,7 @@ var Options = { labels: labels };
                 {" "}
                 original project{" "}
               </a>
-              on which this project is based.
+              that inspired me to create my own project.
             </span>
           </div>
         </div>
