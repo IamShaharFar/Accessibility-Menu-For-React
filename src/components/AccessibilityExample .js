@@ -231,18 +231,18 @@ var Options = { labels: labels };
               Please consider giving this repository a star{" "}
               <i className="fa-solid fa-star"></i> if you've found it helpful.
             </span>
-            <br />
-            <span>
-              Special thanks to the
-              <a
-                href="https://github.com/ranbuch/accessibility"
-                className="text-success"
-              >
-                {" "}
-                original project{" "}
-              </a>
-              that inspired me to create my own project.
-            </span>
+            // <br />
+            // <span>
+            //   Special thanks to the
+            //   <a
+            //     href="https://github.com/ranbuch/accessibility"
+            //     className="text-success"
+            //   >
+            //     {" "}
+            //     original project{" "}
+            //   </a>
+            //   that inspired me to create my own project.
+            // </span>
           </div>
         </div>
       </div>
